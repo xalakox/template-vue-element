@@ -6,7 +6,6 @@
     <el-main>
       <router-view></router-view>
     </el-main>
-    <el-footer>footer</el-footer>
   </el-container>
 </template>
 
@@ -24,7 +23,7 @@ export default {
 .el-container {
   height: 100vh;
 }
-.el-header, .el-footer {
+.el-header {
   background-color: #eee;
   display: flex;
   justify-content: center;

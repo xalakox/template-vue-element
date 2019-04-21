@@ -9,17 +9,17 @@ export default {
     path: '',
     component: () => import('@/views/demo/index.vue'),
     children: [{
-      path: '/demo/api',
+      path: 'api',
       component: () => import('@/views/demo/views/api.vue'),
       name: 'demoApi',
       meta: { title: 'demoApi' }
     }, {
-      path: '/demo/chart',
+      path: 'chart',
       component: () => import('@/views/demo/views/chart.vue'),
       name: 'demoChart',
       meta: { title: 'demoChart' }
     }, {
-      path: '/demo/filters',
+      path: 'filters',
       component: () => import('@/views/demo/views/filters.vue'),
       name: 'demoFilters',
       meta: { title: 'demoFilters' }

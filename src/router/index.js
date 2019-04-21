@@ -3,13 +3,10 @@ import Router from 'vue-router';
 
 Vue.use(Router);
 
-import Layout from '@/layout/index.vue';
-
 import demoRouter from './modules/demo.js';
 
 export const constantRoutes = [{
   path: '',
-  component: Layout,
   redirect: '/demo'
 }, demoRouter];
 
