@@ -1,20 +1,17 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Layout from '@/layout/index.vue';
-
 Vue.use(Router);
 
+import Layout from '@/layout/index.vue';
+
+import demoRouter from './modules/demo.js';
+
 export const constantRoutes = [{
-  path: '/',
+  path: '',
   component: Layout,
-  redirect: '/demo',
-  children: [{
-    path: '/demo',
-    component: () => import('@/views/demo/index.vue'),
-    meta: { title: 'demo' }
-  }]
-}];
+  redirect: '/demo'
+}, demoRouter];
 
 export const asyncRoutes = [];
 

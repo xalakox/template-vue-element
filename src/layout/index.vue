@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import TheLogo from './components/the-logo.vue';
+import TheLogo from './components/logo.vue';
 export default {
   name: 'Layout',
   components: {
