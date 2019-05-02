@@ -6,7 +6,7 @@
 export default {
   name: 'DemoChart',
   mounted() {
-    window.console.log('DemoChart');
+    window.console.log('Chart');
   }
 };
 </script>

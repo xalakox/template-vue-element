@@ -6,7 +6,7 @@
 export default {
   name: 'DemoFilters',
   mounted() {
-    window.console.log('DemoFilters');
+    window.console.log('Filters');
   }
 };
 </script>
