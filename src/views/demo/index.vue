@@ -4,6 +4,7 @@
       <router-link to="/demo/api">api</router-link>
       <router-link to="/demo/chart">chart</router-link>
       <router-link to="/demo/filters">filters</router-link>
+      <router-link to="/demo/mock">mock</router-link>
     </nav>
     <router-view></router-view>
   </section>

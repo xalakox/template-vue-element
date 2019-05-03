@@ -3,18 +3,18 @@
 </template>
 
 <script>
-import { demoApi } from '@/api/demo.js';
+import { demoMock } from '@/api/demo.js';
 export default {
-  name: 'DemoApi',
+  name: 'DemoMock',
   data() {
     return {
       results: []
     };
   },
   mounted() {
-    demoApi(2).then(response => {
+    demoMock().then(response => {
       window.console.log(response);
-      this.results = response.data.results;
+      this.results = response;
     });
   }
 };

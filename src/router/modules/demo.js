@@ -1,4 +1,4 @@
-import Layout from '@/layout/index.vue';
+import Layout from '@/layout';
 
 export default {
   path: '/demo',
@@ -7,7 +7,7 @@ export default {
   meta: { title: 'demo' },
   children: [{
     path: '',
-    component: () => import('@/views/demo/index.vue'),
+    component: () => import('@/views/demo'),
     children: [{
       path: 'api',
       component: () => import('@/views/demo/views/api.vue'),
@@ -23,6 +23,11 @@ export default {
       component: () => import('@/views/demo/views/filters.vue'),
       name: 'demoFilters',
       meta: { title: 'demoFilters' }
+    }, {
+      path: 'mock',
+      component: () => import('@/views/demo/views/mock.vue'),
+      name: 'demoMock',
+      meta: { title: 'demoMock' }
     }]
   }]
 };
