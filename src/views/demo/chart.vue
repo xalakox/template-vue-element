@@ -1,12 +1,11 @@
 <template>
-  <h1>filters</h1>
+  <h1>chart</h1>
 </template>
 
 <script>
 export default {
-  name: 'DemoFilters',
   mounted() {
-    window.console.log('Filters');
+    window.console.log('Chart');
   }
 };
 </script>
