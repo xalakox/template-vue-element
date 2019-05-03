@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { Message } from 'element-ui';
 
 const service = axios.create({
-  timeout: 5000
+  timeout: 10000
 });
 
 service.interceptors.request.use(
@@ -18,6 +19,12 @@ service.interceptors.response.use(
     return response;
   },
   error => {
+    // 拦截器示例
+    window.console.log(error.response);
+    Message({
+      message: error.response.data,
+      type: 'error'
+    });
     return Promise.reject(error);
   }
 );
