@@ -13,6 +13,9 @@ export default {
     path: 'filters',
     component: () => import('@/views/demo/filters.vue')
   }, {
+    path: 'i18n',
+    component: () => import('@/views/demo/i18n.vue')
+  }, {
     path: 'mock',
     component: () => import('@/views/demo/mock.vue')
   }]

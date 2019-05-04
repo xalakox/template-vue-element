@@ -1,13 +1,16 @@
 import Vue from 'vue';
 import App from './App.vue';
 
-import router from './router/index.js';
+import router from './router';
 import store from './store.js';
+
+// i18n
+import i18n from './i18n';
 
 // element-ui
 import 'element-ui/lib/theme-chalk/index.css';
 import Element from 'element-ui';
-Vue.use(Element, { size: 'small' });
+Vue.use(Element, { size: 'small', i18n: (key, value) => i18n.t(key, value) });
 
 // echarts
 import 'echarts/lib/chart/line.js';
@@ -26,5 +29,6 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app');

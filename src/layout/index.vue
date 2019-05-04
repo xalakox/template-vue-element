@@ -6,6 +6,7 @@
         <router-link to="/demo/api">api</router-link>
         <router-link to="/demo/chart">chart</router-link>
         <router-link to="/demo/filters">filters</router-link>
+        <router-link to="/demo/i18n">i18n</router-link>
         <router-link to="/demo/mock">mock</router-link>
       </nav>
     </el-header>
