@@ -2,37 +2,35 @@ import request from '@/utils/request.js';
 import mock from 'mockjs';
 
 export function demoApi(results) {
-  return request({
-    url: 'https://randomuser.me/api/',
-    method: 'get',
+  return request.get('https://randomuser.me/api/', {
     params: {
       results: results
     }
   });
 }
 
-export function demoMock() {
-  // http://mockjs.com/examples.html
-  const _data = mock.mock({
-    'A|1-10': '★',
-    'B|1-100': 1,
-    'C|1-100.1-2': 1,
-    'D|1': true,
-    'E|2': [{
+export function demoMock1() {
+  const _res = mock.mock({
+    'A|1-100': 1,
+    'B|1-100.1-2': 1,
+    'C|1': true,
+    'D|2': [{
       a: 1,
       b: 2
     }],
-    'F': '@string',
-    'G': '@date',
-    'H': '@time',
-    'I': '@title',
-    'J': '@csentence',
-    'K': '@name',
-    'L': '@domain',
-    'M': '@email',
-    'N': '@ip',
-    'O': '@province',
-    'P': '@guid'
+    'E': '@string',
+    'F': '@date',
+    'G': '@time',
+    'H': '@title',
+    'I': '@name',
+    'J': '@domain',
+    'K': '@email',
+    'L': '@ip',
+    'M': '@guid'
   });
-  return new Promise(resolve => resolve(_data));
+  return new Promise(resolve => resolve(_res));
+}
+
+export function demoMock2() {
+  return request.get('/demo');
 }

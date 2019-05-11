@@ -1,20 +1,36 @@
 <template>
-  <pre>{{ results }}</pre>
+  <section>
+    <el-button @click="getMockData1">直接生成</el-button>
+    <el-button @click="getMockData2">拦截请求</el-button>
+    <pre>{{ results }}</pre>
+  </section>
 </template>
 
 <script>
-import { demoMock } from '@/api/demo.js';
+import { demoMock1, demoMock2 } from '@/api/demo.js';
 export default {
   data() {
     return {
-      results: []
+      results: {}
     };
   },
-  mounted() {
-    demoMock().then(response => {
-      window.console.log(response);
-      this.results = response;
-    });
+  methods: {
+    getMockData1() {
+      demoMock1().then(response => {
+        this.results = response;
+      });
+    },
+    getMockData2() {
+      demoMock2().then(response => {
+        this.results = response.data;
+      });
+    }
   }
 };
 </script>
+
+<style lang="less" scoped>
+pre {
+  padding-top: 20px;
+}
+</style>

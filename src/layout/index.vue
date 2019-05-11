@@ -1,7 +1,6 @@
 <template>
   <el-container>
-    <el-header height="auto">
-      <h1 class="logo"><img src="@/assets/logo.png"></h1>
+    <el-header>
       <nav class="nav">
         <router-link to="/demo/api">api</router-link>
         <router-link to="/demo/chart">chart</router-link>
@@ -9,6 +8,7 @@
         <router-link to="/demo/i18n">i18n</router-link>
         <router-link to="/demo/mock">mock</router-link>
       </nav>
+      <img class="logo" src="@/assets/logo.png">
     </el-header>
     <el-main>
       <router-view></router-view>
@@ -21,31 +21,22 @@
   height: 100vh;
 }
 .el-header {
-  padding: 0;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   .logo {
-    background-color: #eee;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      display: block;
-      height: 40px;
-      width: 40px;
-    }
+    display: block;
+    height: 40px;
+    width: 40px;
   }
-  .nav {
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    a {
-      color: #0cf;
-      text-decoration: none;
-      font-size: 14px;
-      margin: 0 10px;
-      &.router-link-active, &:hover {
-        color: #f00;
-      }
+  .nav a {
+    color: #0cf;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 20px;
+    &.router-link-active, &:hover {
+      color: #f00;
     }
   }
 }

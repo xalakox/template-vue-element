@@ -11,8 +11,7 @@ export default {
     };
   },
   mounted() {
-    demoApi(2).then(response => {
-      window.console.log(response);
+    demoApi(1).then(response => {
       this.results = response.data.results;
     });
   }

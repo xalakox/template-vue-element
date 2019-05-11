@@ -1,5 +1,5 @@
 <template>
-  <v-chart :options="polar"></v-chart>
+  <v-chart :options="options"></v-chart>
 </template>
 
 <script>
@@ -11,15 +11,9 @@ export default {
       data.push([Math.sin(2 * t) * Math.cos(2 * t), i]);
     }
     return {
-      polar: {
+      options: {
         polar: {
           center: ['50%', '50%']
-        },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross'
-          }
         },
         angleAxis: {
           type: 'value',
@@ -35,7 +29,7 @@ export default {
           showSymbol: false,
           data: data
         }],
-        animationDuration: 2000
+        animationDuration: 1000
       }
     };
   }
