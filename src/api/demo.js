@@ -26,7 +26,12 @@ export function demoMock1() {
     'J': '@domain',
     'K': '@email',
     'L': '@ip',
-    'M': '@guid'
+    'M': '@guid',
+    'N': '@ctitle',
+    'O': '@csentence',
+    'P': '@region',
+    'Q': '@province',
+    'R': '@city'
   });
   return new Promise(resolve => resolve(_res));
 }
