@@ -1,9 +1,9 @@
 <template>
-  <section>
+  <div>
     <el-button @click="getMockData1">直接生成</el-button>
     <el-button @click="getMockData2">拦截请求</el-button>
     <pre>{{ results }}</pre>
-  </section>
+  </div>
 </template>
 
 <script>

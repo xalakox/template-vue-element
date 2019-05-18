@@ -1,43 +1,40 @@
 <template>
   <el-container>
-    <el-header>
-      <nav class="nav">
-        <router-link to="/demo/api">api</router-link>
-        <router-link to="/demo/chart">chart</router-link>
-        <router-link to="/demo/filters">filters</router-link>
-        <router-link to="/demo/i18n">i18n</router-link>
-        <router-link to="/demo/mock">mock</router-link>
-      </nav>
-      <img class="logo" src="@/assets/logo.png">
-    </el-header>
+    <el-aside width="150px">
+      <el-menu background-color="#545c64" text-color="#fff" active-text-color="#0cf" :default-active="activeIndex" router>
+        <el-menu-item v-for="item in menus" :key="item" :index="`/demo/${item}`">{{ item }}</el-menu-item>
+      </el-menu>
+    </el-aside>
     <el-main>
       <router-view></router-view>
     </el-main>
   </el-container>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      menus: ['api', 'chart', 'filters', 'i18n', 'mock'],
+      activeIndex: this.$route.path
+    };
+  },
+  watch: {
+    '$route'(to) {
+      this.activeIndex = to.path;
+    }
+  }
+};
+</script>
+
 <style lang="less" scoped>
 .el-container {
   height: 100vh;
 }
-.el-header {
-  background-color: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .logo {
-    display: block;
-    height: 40px;
-    width: 40px;
-  }
-  .nav a {
-    color: #0cf;
-    text-decoration: none;
-    font-size: 16px;
-    margin-right: 20px;
-    &.router-link-active, &:hover {
-      color: #f00;
-    }
-  }
+.el-aside {
+  background-color: #545c64;
+}
+.el-menu {
+  border: 0;
 }
 </style>
