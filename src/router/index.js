@@ -6,8 +6,11 @@ Vue.use(Router);
 import demoRouter from './modules/demo.js';
 
 export const constantRoutes = [{
-  path: '',
-  redirect: '/demo'
+  path: '/',
+  redirect: '/demo/permission'
+}, {
+  path: '/login',
+  component: () => import('@/views/login.vue')
 }, demoRouter];
 
 export const asyncRoutes = [];

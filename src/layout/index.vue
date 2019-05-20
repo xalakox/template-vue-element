@@ -15,7 +15,7 @@
 export default {
   data() {
     return {
-      menus: ['api', 'chart', 'filters', 'i18n', 'mock'],
+      menus: ['api', 'chart', 'filters', 'i18n', 'mock', 'permission'],
       activeIndex: this.$route.path
     };
   },
