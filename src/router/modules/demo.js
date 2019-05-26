@@ -10,6 +10,9 @@ export default {
     path: 'chart',
     component: () => import('@/views/demo/chart.vue')
   }, {
+    path: 'excel',
+    component: () => import('@/views/demo/excel.vue')
+  }, {
     path: 'filters',
     component: () => import('@/views/demo/filters.vue')
   }, {
