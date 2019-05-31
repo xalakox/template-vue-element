@@ -5,7 +5,7 @@ import router from './router';
 import store from './store.js';
 
 // mock
-import './mock/index.js';
+import './mock';
 
 // i18n
 import i18n from './i18n';

@@ -7,7 +7,7 @@ import demoRouter from './modules/demo.js';
 
 export const constantRoutes = [{
   path: '/',
-  redirect: '/demo/permission'
+  redirect: '/demo'
 }, {
   path: '/login',
   component: () => import('@/views/login.vue')
