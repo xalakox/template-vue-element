@@ -15,7 +15,7 @@
 export default {
   data() {
     return {
-      menus: ['api', 'chart', 'dialog', 'excel', 'filters', 'i18n', 'mock', 'permission'],
+      menus: ['api', 'chart', 'dialog', 'excel', 'filters', 'form', 'i18n', 'mock', 'permission'],
       activeIndex: this.$route.path
     };
   },
