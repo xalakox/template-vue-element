@@ -25,6 +25,18 @@ export default {
       this.dialogVisible = false;
       this.$emit('confirm', { b: this.input });
     }
+  },
+  created() {
+    window.console.log('created');
+  },
+  mounted() {
+    window.console.log('mounted');
+  },
+  updated() {
+    window.console.log('updated');
+  },
+  destroyed() {
+    window.console.log('destroyed');
   }
 };
 </script>
