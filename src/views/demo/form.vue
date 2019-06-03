@@ -1,15 +1,20 @@
 <template>
-  <el-form :model="form" :rules="rules" @validate="check" ref="form">
-    <el-form-item prop="a">
-      <el-input v-model="form.a" placeholder="密码"></el-input>
+  <el-form :model="form" :rules="rules" @validate="check" ref="form" label-width="80px">
+    <el-form-item label="手机号" prop="phone">
+      <el-input v-model="form.phone"></el-input>
     </el-form-item>
-    <el-form-item prop="b">
-      <el-input v-model="form.b" placeholder="确认密码"></el-input>
+    <el-form-item label="密码" prop="password">
+      <el-input v-model="form.password"></el-input>
+    </el-form-item>
+    <el-form-item label="确认密码" prop="checkPassword">
+      <el-input v-model="form.checkPassword"></el-input>
+    </el-form-item>
+    <el-form-item label="标签">
+      <el-input v-model="form.tag"></el-input>
     </el-form-item>
     <el-form-item>
       <el-button @click="submit">提交</el-button>
       <el-button :disabled="invalid">提交</el-button>
-      <el-button @click="reset">重置</el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -17,19 +22,41 @@
 <script>
 export default {
   data() {
+    const validatePassword1 = (rule, value, callback) => {
+      if (this.form.checkPassword !== '') {
+        this.$refs.form.validateField('checkPassword');
+      }
+      callback();
+    };
+    const validatePassword2 = (rule, value, callback) => {
+      if (this.form.password !== '') {
+        if (value !== this.form.password) {
+          callback(new Error('密码不一致'));
+        } else {
+          callback();
+        }
+      }
+      callback();
+    };
     return {
       form: {
-        a: '',
-        b: ''
+        phone: '',
+        password: '',
+        checkPassword: '',
+        tag: ''
       },
       rules: {
-        a: [
-          { required: true, message: '必填', trigger: 'blur' },
-          { min: 6, max: 18, message: '长度在 6 到 18 个字符', trigger: 'blur' }
+        phone: [
+          { required: true, message: '必填', trigger: ['blur', 'change'] },
+          { pattern: /^1[3|4|5|7|8][0-9]{9}$/, message: '格式错误', trigger: 'change' }
         ],
-        b: [
-          { required: true, message: '必填', trigger: 'blur' },
-          { min: 6, max: 18, message: '长度在 6 到 18 个字符', trigger: 'blur' }
+        password: [
+          { required: true, message: '必填', trigger: ['blur', 'change'] },
+          { validator: validatePassword1, trigger: 'change' }
+        ],
+        checkPassword: [
+          { required: true, message: '必填', trigger: ['blur', 'change'] },
+          { validator: validatePassword2, trigger: ['blur', 'change'] }
         ]
       },
       invalid: true
@@ -43,14 +70,8 @@ export default {
         }
       });
     },
-    check(a, b, c) {
-      // TODO
-      window.console.log(a);
-      window.console.log(b);
-      window.console.log(c);
-    },
-    reset() {
-      this.$refs.form.resetFields();
+    check() {
+      this.invalid = this.$refs.form.fields.some(e => e.validateState !== 'success');
     }
   }
 };
