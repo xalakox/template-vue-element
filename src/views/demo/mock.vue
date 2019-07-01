@@ -16,14 +16,10 @@ export default {
   },
   methods: {
     getMockData1() {
-      demoMock1().then(response => {
-        this.results = response;
-      });
+      demoMock1().then(response => this.results = response);
     },
     getMockData2() {
-      demoMock2().then(response => {
-        this.results = response.data;
-      });
+      demoMock2().then(response => this.results = response.data);
     }
   }
 };

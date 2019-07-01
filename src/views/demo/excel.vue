@@ -34,7 +34,11 @@ export default {
       const worksheet2 = window.XLSX.utils.aoa_to_sheet(this.aoa);
       // 设置样式
       worksheet1['A1'].s = {
-        font: { sz: 16, bold: true, color: { rgb: 'ff0000' } },
+        font: {
+          sz: 16,
+          bold: true,
+          color: { rgb: 'ff0000' }
+        },
         alignment: {
           horizontal: 'center',
           vertical: 'center'

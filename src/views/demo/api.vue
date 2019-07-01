@@ -11,9 +11,7 @@ export default {
     };
   },
   mounted() {
-    demoApi(1).then(response => {
-      this.results = response.data.results;
-    });
+    demoApi(1).then(response => this.results = response.data.results);
   }
 };
 </script>

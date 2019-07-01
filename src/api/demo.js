@@ -4,7 +4,7 @@ import mock from 'mockjs';
 export function demoApi(results) {
   return request.get('https://randomuser.me/api/', {
     params: {
-      results: results
+      results
     }
   });
 }
