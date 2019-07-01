@@ -8,17 +8,6 @@ import zhLocale from './lang/zh.js';
 
 Vue.use(VueI18n);
 
-const messages = {
-  en: {
-    ...elementEnLocale,
-    ...enLocale
-  },
-  zh: {
-    ...elementZhLocale,
-    ...zhLocale
-  }
-};
-
 function getLanguage() {
   const language = window.localStorage.getItem('language');
   return language ? language : 'zh';
@@ -26,5 +15,14 @@ function getLanguage() {
 
 export default new VueI18n({
   locale: getLanguage(),
-  messages
+  messages: {
+    en: {
+      ...elementEnLocale,
+      ...enLocale
+    },
+    zh: {
+      ...elementZhLocale,
+      ...zhLocale
+    }
+  }
 });

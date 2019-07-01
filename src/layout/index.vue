@@ -15,7 +15,7 @@
 export default {
   data() {
     return {
-      menus: ['api', 'chart', 'dialog', 'excel', 'filters', 'form', 'i18n', 'mock', 'permission'],
+      menus: this.$store.getters.permission_routes,
       activeIndex: this.$route.path
     };
   },

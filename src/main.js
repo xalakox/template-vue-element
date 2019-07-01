@@ -1,14 +1,12 @@
 import Vue from 'vue';
 import App from './App.vue';
 
+import i18n from './i18n';
 import router from './router';
-import store from './store.js';
+import store from './store';
 
 // mock
 import './mock';
-
-// i18n
-import i18n from './i18n';
 
 // element-ui
 import 'element-ui/lib/theme-chalk/index.css';
@@ -30,8 +28,8 @@ import './styles/index.less';
 Vue.config.productionTip = false;
 
 new Vue({
+  i18n,
   router,
   store,
-  i18n,
   render: h => h(App)
 }).$mount('#app');

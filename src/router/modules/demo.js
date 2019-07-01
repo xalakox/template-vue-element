@@ -27,8 +27,5 @@ export default {
   }, {
     path: 'mock',
     component: () => import('@/views/demo/mock.vue')
-  }, {
-    path: 'permission',
-    component: () => import('@/views/demo/permission.vue')
   }]
 };

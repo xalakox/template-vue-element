@@ -4,8 +4,9 @@
     <!-- TODO -->
     <h1>当前用户身份：{{ roles }}</h1>
     <h1>仅admin可见</h1>
-    <h1>仅guest可见</h1>
-    <h1>admin和guest均可见</h1>
+    <h1>仅user可见</h1>
+    <h1>admin和user可见</h1>
+    <h1>所有用户可见</h1>
   </div>
 </template>
 
